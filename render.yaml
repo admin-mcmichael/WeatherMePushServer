@@ -3,18 +3,7 @@ services:
     name: weatherme-push-server
     runtime: python
     env: python
-    region: oregon
     plan: free
-    runtime: python
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
     pythonVersion: 3.9
-    envVars:
-      - key: APNS_TEAM_ID
-        value: your_team_id_here
-      - key: APNS_KEY_ID
-        value: your_key_id_here
-      - key: BUNDLE_ID
-        value: com.your.bundle.id
-      - key: APNS_AUTH_KEY_PATH
-        value: AuthKey.p8
