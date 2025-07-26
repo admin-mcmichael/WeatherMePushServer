@@ -10,7 +10,7 @@ app = Flask(__name__)
 AUTH_KEY_PATH = os.getenv('APNS_KEY_PATH', 'AuthKey_85QQ4DK39M.p8')
 AUTH_KEY_ID = os.getenv('APNS_KEY_ID', '85QQ4DK39M')         # From Apple Developer Portal
 TEAM_ID = os.getenv('TEAM_ID', 'V7DXMMX52T')                 # Your Apple Developer Team ID
-BUNDLE_ID = os.getenv('BUNDLE_ID', 'com.example.weatherme')  # Your app's Bundle ID
+BUNDLE_ID = os.getenv('BUNDLE_ID', 'au.com.mcmichael.weatherme')  # Your app's Bundle ID
 
 # Set up TokenCredentials
 credentials = TokenCredentials(
