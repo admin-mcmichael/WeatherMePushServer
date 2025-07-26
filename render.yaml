@@ -1,6 +1,7 @@
 services:
   - type: web
     name: weatherme-push-server
+    runtime: python
     env: python
     region: oregon
     plan: free
