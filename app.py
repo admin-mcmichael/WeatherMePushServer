@@ -10,7 +10,7 @@ app = Flask(__name__)
 TEAM_ID = os.getenv("APNS_TEAM_ID")
 KEY_ID = os.getenv("APNS_KEY_ID")
 BUNDLE_ID = os.getenv("APNS_BUNDLE_ID")
-AUTH_KEY_PATH = os.getenv("APNS_AUTH_KEY_PATH", "AuthKey.p8")
+AUTH_KEY_PATH = . ("APNS_AUTH_KEY_PATH", "AuthKey.p8")
 
 # Initialize APNs client
 credentials = TokenCredentials(
