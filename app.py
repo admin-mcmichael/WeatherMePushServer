@@ -32,13 +32,18 @@ def notify():
 
     payload = Payload(alert=alert, sound="default", badge=1)
 
-    try:
-        response = apns_client.send_notification(device_token, payload, topic=BUNDLE_ID)
-        print("APNs Response:", response.__dict__)  # Add detailed logging
-        return jsonify({'status': 'sent'}), 200
-    except Exception as e:
-        print("APNs Error:", str(e))
-        return jsonify({'status': 'error', 'message': str(e)}), 500
+   import traceback  # Add at the top if not present
+
+...
+
+try:
+    response = apns_client.send_notification(device_token, payload, topic=BUNDLE_ID)
+    print("APNs Response:", response.__dict__)
+    return jsonify({'status': 'sent'}), 200
+except Exception as e:
+    print("APNs Error:", str(e))
+    traceback.print_exc()  # <- this prints the full error details
+    return jsonify({'status': 'error', 'message': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
