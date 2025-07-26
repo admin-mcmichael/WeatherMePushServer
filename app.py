@@ -23,7 +23,7 @@ credentials = TokenCredentials(
 # Set up APNsClient
 apns_client = APNsClient(
     credentials,
-    use_sandbox=False  # ✅ Set to False for production
+    use_sandbox=True  # ✅ Set to False for production
 )
 
 @app.route('/notify', methods=['POST'])
